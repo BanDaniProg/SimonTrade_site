@@ -1,0 +1,267 @@
+:root {
+  --mainBlue-color: #1901ad;
+  --mainBackground-color: #f4f4f4;
+  --textWhite-color: #ffffff;
+  --textBlack-color: #000000;
+  --border-radius: 20px;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainPage {
+  width: 100%;
+  max-width: 800px;
+  min-height: 100vh;
+  background-color: var(--mainBackground-color);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+}
+.mainPage > * {
+  /*border: 1px solid black;*/
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+header img {
+  width: 80px;
+  height: 80px;
+}
+nav {
+  background-color: var(--mainBlue-color);
+  display: flex;
+  align-items: center;
+  height: 50px;
+  flex: 1;
+  border-radius: var(--border-radius);
+  margin: 10px;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--textWhite-color);
+  font-size: 1rem;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+main > * {
+  width: 100%;
+  /*border: 1px solid black;*/
+  box-sizing: border-box;
+}
+.landingWelcomePic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  background: url(img/bg.jpg) no-repeat center center;
+}
+.landingWelcomePicBg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 50px;
+  background: var(--textWhite-color);
+  opacity: 0.92;
+  border-radius: var(--border-radius);
+}
+.landingWelcomePic section {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--mainBlue-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+  opacity: 1;
+}
+.landingWelcomePic img {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  position: relative;
+  top: -20px;
+}
+.landingCategories {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryText {
+  padding-left: 25px;
+}
+.categoryText h2 {
+  font-size: 1.2rem;
+  margin-block-start: 0.8em;
+  margin-block-end: 0;
+}
+.categoryText h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.8;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.toolCategories {
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 20px;
+  background-color: var(--textWhite-color);
+  border-radius: var(--border-radius);
+  font-weight: bold;
+}
+
+.landingOpeningHours {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainBlue-color);
+  border-radius: var(--border-radius);
+  padding: 30px;
+}
+
+.landingOpeningInside {
+  background-color: var(--textWhite-color);
+  width: min(90%, 420px);
+  padding-bottom: 20px;
+  padding-left: 30px;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+}
+.landingOpeningHours h2 {
+  text-align: center;
+  color: var(--mainBlue-color);
+  letter-spacing: 10px;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+.landingOpeningHours section {
+  display: flex;
+  align-items: center;
+}
+.landingOpeningInside table {
+  margin: 0 auto;
+  text-align: left;
+  color: var(--mainBlue-color);
+}
+
+.landingOpeningInside td:first-child {
+  font-weight: bold;
+  padding-right: 30px;
+  color: var(--mainBlue-color);
+}
+
+.landingLocation {
+  background-color: var(--textWhite-color);
+  margin: 20px;
+  padding: 5px;
+  border-radius: var(--border-radius);
+}
+.locationMap {
+  padding: 0 20px 15px 20px;
+  border-radius: var(--border-radius);
+}
+.locationMap iframe {
+  border-radius: var(--border-radius);
+  display: block;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  color: var(--textWhite-color);
+}
+.footerMain {
+  background-color: var(--mainBlue-color);
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+.footerBrandName {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+.footerMain > p {
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+.footerDetails {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px 0 20px 0;
+  border-bottom: solid 1px var(--textWhite-color);
+  border-top: solid 1px var(--textWhite-color);
+}
+
+.footerAvailable div {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.footerAvailable p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+.footerOpeningHours div {
+  justify-content: flex-start;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.footerLogo {
+  background-color: var(--textWhite-color);
+  border-radius: var(--border-radius);
+}
+.footerCopyright {
+  background-color: var(--mainBlue-color);
+  margin: 10px 0 0 0;
+  padding:10px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: var(--border-radius);
+}
