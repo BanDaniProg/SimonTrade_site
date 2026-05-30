@@ -35,21 +35,38 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
+  position:relative;
 }
 
 header img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 nav {
   background-color: var(--mainBlue-color);
   display: flex;
   align-items: center;
-  height: 50px;
-  flex: 1;
-  border-radius: var(--border-radius);
-  margin: 10px;
+  height: 60px;
+  justify-content: flex-end;
+  border-radius: 10px;
   text-align: center;
+  position:absolute;
+  right:25px;
+  padding:0 0px 0 0px;
+}
+.logoNav{
+  height: 30px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  position:relative;
+  top:-2px;
+}
+
+.hamburgerMenu {
+  display: none;
 }
 
 nav ul {
@@ -59,14 +76,25 @@ nav ul {
   width: 100%;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+  gap:50px;
+  box-sizing: border-box;
 }
+nav ul a{
+padding:15px 10px 15px 5px;
+}
+nav ul a:hover{
+  box-shadow: 0px 0px 5px rgb(0, 0, 0);
+  border-radius:10px;
+}
+
 
 a {
   text-decoration: none;
   color: var(--textWhite-color);
   font-size: 1rem;
 }
+
 main {
   display: flex;
   flex-direction: column;
@@ -90,22 +118,23 @@ main > * {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-top: 50px;
   background: var(--textWhite-color);
   opacity: 0.92;
   border-radius: var(--border-radius);
+  padding: 20px;
 }
 .landingWelcomePic section {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
   text-align: center;
   color: var(--mainBlue-color);
   font-weight: bold;
-  margin-bottom: 10px;
   opacity: 1;
+  margin:10px;
 }
 .landingWelcomePic img {
-  width: 200px;
-  height: 200px;
+  display:none;
+  width: clamp(100px, 20vw, 200px);
+  height: clamp(100px, 20vw, 200px);
   opacity: 1;
   position: relative;
   top: -20px;
@@ -132,13 +161,13 @@ main > * {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
-  margin:0px 20px 0 20px;
+  margin: 0px 20px 0 20px;
 }
 .toolCategories {
   height: 100px;
-  width:auto;
+  width: auto;
   text-align: center;
   align-items: center;
   align-content: center;
@@ -173,10 +202,11 @@ main > * {
   color: var(--mainBlue-color);
   letter-spacing: 10px;
   font-weight: bold;
-  font-size: clamp(22px, 7vw, 40px);
-  letter-spacing: 6px;
+  font-size: clamp(20px, 5vw, 40px);
   text-align: center;
   overflow-wrap: break-word;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 .landingOpeningHours section {
   display: flex;
@@ -201,6 +231,10 @@ main > * {
   font-weight: bold;
   padding-right: 30px;
   color: var(--mainBlue-color);
+}
+
+.logoOpen{
+   width: clamp(50px, 16vw, 80px);
 }
 
 .landingLocation {
@@ -232,7 +266,7 @@ footer {
 
 .footerBrandName {
   text-align: center;
-    font-size: clamp(1.3rem, 6vw, 2rem);
+  font-size: clamp(1.3rem, 6vw, 2rem);
   font-weight: bold;
 }
 .footerMain > p {
@@ -250,8 +284,10 @@ footer {
 
 .footerAvailable div {
   text-align: center;
-  font-size: clamp(0.8rem, 3vw, 1.2rem);
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
   font-weight: bold;
+  text-decoration: underline;
+  letter-spacing: 5px;
 }
 .footerAvailable p {
   margin-block-start: 0.5em;
@@ -260,9 +296,11 @@ footer {
 .footerOpeningHours div {
   justify-content: flex-start;
   text-align: center;
-  font-size: clamp(0.8rem, 3.4vw, 1.2rem);
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
   font-weight: bold;
   margin-bottom: 5px;
+  text-decoration: underline;
+  letter-spacing: 5px;
 }
 
 .footerLogo {
@@ -271,22 +309,95 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
-  min-width: 0;
+  margin: 10px;
 }
 
 .footerLogo img {
-  width: clamp(50px, 16vw, 80px);
+  width: clamp(80px, 20vw, 100px);
   height: auto;
   max-width: 100%;
 }
 .footerCopyright {
   background-color: var(--mainBlue-color);
   margin: 10px 0 0 0;
-  padding:10px;
+  padding: 10px;
   height: 100%;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: var(--border-radius);
+}
+
+@media (max-width: 620px) {
+  header {
+    justify-content: space-between;
+  }
+  nav {
+    display: none;
+    
+  }
+  nav.active {
+    display: flex;
+    position:absolute;
+    z-index:999;
+    top:20px;
+    right:20px;
+    height:auto;
+    padding:80px 20px 20px 20px;
+    margin:0px;
+  }
+
+  .hamburgerMenu {
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    width: 60px;
+    background-color: var(--mainBlue-color);
+    color: var(--textWhite-color);
+    border-radius: 10px;
+    border: solid 1px transparent;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    margin-right: 20px;
+    z-index:1001;
+    gap:8px;
+    padding:10px;
+  }
+
+  .hamburgerMenu span{
+    display:block;
+    flex-direction: column;
+    height:3px;
+    width:100%;
+    background-color: var(--textWhite-color);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .hamburgerMenu.active span.hamburgerTop{
+    transform: translateY(11px) rotate(45deg);
+  }
+  .hamburgerMenu.active span.hamburgerMiddle{
+    opacity: 0;
+  }
+  .hamburgerMenu.active span.hamburgerBottom{
+    transform: translateY(-11px) rotate(-45deg);
+  }
+
+  nav ul.open {
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    z-index:100;
+   
+  }
+  .footerLogo {
+    display: none;
+  }
+  .footerDetails {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 }
