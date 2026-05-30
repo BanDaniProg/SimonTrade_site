@@ -11,13 +11,17 @@
 <body>
     <div class="mainPage">
         <header>
-            <img src="img/Logo.svg" alt="logo" class="logo" height="100px" width="100px" />
+            <img src="img/Logo.svg" alt="logo" class="logo" />
+            <button class="hamburgerMenu">
+                <span class="hamburgerTop"></span>
+                <span class="hamburgerMiddle"></span>
+                <span class="hamburgerBottom"></span>
+            </button>
             <nav>
                 <ul>
-                    <li><a href="#">Főoldal</a></li>
-                    <li><a href="#">Termékek</a></li>
-                    <li><a href="#">Akciók</a></li>
-                    <li><a href="#">Kapcsolat</a></li>
+                    <li><a href="#"><img src="img/logoHome.svg" alt="logo" class="logoNav" />Főoldal</a></li>
+                    <li><a href="#"><img src="img/logoProducts.svg" alt="logo" class="logoNav" />Termékek</a></li>
+                    <li><a href="#"><img src="img/logoContact.svg" alt="logo" class="logoNav" />Kapcsolat</a></li>
                 </ul>
             </nav>
         </header>
@@ -47,7 +51,7 @@
                 <div class="landingOpeningInside">
                     <h2>Nyitvatartás</h2>
                     <section>
-                        <div>OpeningLogo</div>
+                        <img src="img/openLogo.svg" alt="logo" class="logoOpen" />
                         <table>
                             <tr>
                                 <td>Hétfő</td>
@@ -103,14 +107,15 @@
             <section class="footerBody">
                 <section class="footerMain">
                     <section class="footerBrandName">Simon Trade Kft.</section>
-                    <p>Kulcsmásolás - Zárak - Kéziszerszámok - Barkácsárú - Kerti eszközök - Villanyzserelési anyagok</p>
+                    <p>Kulcsmásolás - Zárak - Kéziszerszámok - Barkácsárú - Kerti eszközök - Villanyzserelési anyagok
+                    </p>
                     <section class="footerDetails">
                         <section class="footerLogo"><img src="img/Logo.svg" alt="logo" class="logo" height="100px"
                                 width="100px" /></section>
                         <section class="footerAvailable">
                             <div>Elérhetőség</div>
                             <p>Cím: 1161 Budapest Rákosi út 113.</p>
-                            <p>Tel: +0670123456</p>
+                            <p>Tel :+0670123456</p>
                             <p>Email: email@email.hu</p>
 
                         </section>
@@ -119,15 +124,15 @@
                             <section>
                                 <table>
                                     <tr>
-                                        <td>Hétfő - Péntek</td>
+                                        <td>Hétfő - Péntek:</td>
                                         <td>7:00 - 17:00</td>
                                     </tr>
                                     <tr>
-                                        <td>Szombat</td>
+                                        <td>Szombat:</td>
                                         <td>8:00 - 12:00</td>
                                     </tr>
                                     <tr>
-                                        <td>Vasárnap</td>
+                                        <td>Vasárnap:</td>
                                         <td>Zárva</td>
                                     </tr>
                                 </table>
@@ -143,6 +148,8 @@
             </section>
         </footer>
     </div>
+
+    <script src="hamburgerMenu.js"></script>
 </body>
 
 </html>
