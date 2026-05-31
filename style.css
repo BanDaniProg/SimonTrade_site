@@ -29,7 +29,6 @@ body {
   border-radius: var(--border-radius);
 }
 .mainPage > * {
-  /*border: 1px solid black;*/
   box-sizing: border-box;
 }
 
@@ -140,10 +139,6 @@ main > * {
   position: relative;
   top: -20px;
 }
-.landingCategories {
-  display: flex;
-  flex-direction: column;
-}
 
 .categoryText {
   padding-left: 25px;
@@ -152,6 +147,7 @@ main > * {
   font-size: 1.2rem;
   margin-block-start: 0.8em;
   margin-block-end: 0;
+  margin-top:30px;
 }
 .categoryText h3 {
   font-size: 1rem;
@@ -160,24 +156,38 @@ main > * {
   margin-block-end: 0.8;
 }
 
-.cards {
+.landingCategories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-  margin: 0px 20px 0 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
 }
-.toolCategories {
-  height: 100px;
-  width: auto;
-  text-align: center;
+
+.categoryText {
+  grid-column: 1 / -1;
+}
+
+.landingCategories.catalogCategory {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.landingCategories .catalogCategoryTitle{
+  font-size:1em;
   align-items: center;
-  align-content: center;
-  margin-bottom: 20px;
-  background-color: var(--textWhite-color);
-  border-radius: var(--border-radius);
-  font-weight: bold;
-  min-width: 0;
-  overflow-wrap: break-word;
+  justify-content: center;
+  text-align: center;
+}
+
+.landingCategories .catalogGroupTitle {
+font-size:0.9em;
+}
+.logoCategory{
+  width: 30px;
+  position:relative;
+  top:10px; 
+  left:-5px;
 }
 
 .landingOpeningHours {
@@ -189,6 +199,7 @@ main > * {
   background-color: var(--mainBlue-color);
   border-radius: var(--border-radius);
   padding: 30px;
+  margin-top:20px;
 }
 
 .landingOpeningInside {
@@ -363,6 +374,9 @@ footer {
   margin-left:10px;
   border:1px solid black;
 }
+.logoSearch{
+  width: clamp(30px, 10vw, 50px);
+}
 
 
 .catalog {
@@ -423,6 +437,71 @@ footer {
   height: 7px;
   border-radius: 10px;
   background: var(--mainBlue-color);
+}
+
+/*contact.html*/
+
+.formHead{
+  background: var(--textWhite-color);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: left;
+  margin:20px 0px 10px 0px;
+}
+
+.formLabel{
+  margin:10px 10px 5px 5px;;
+  font-size: 1.5em;
+  color: var(--mainBlue-color);
+}
+
+.required::after{
+  content:"*";
+  color:red;
+}
+.formField {
+  box-sizing: border-box;
+  min-height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+.formLabel:first-child{
+margin:0px 0px 5px 5px;
+}
+
+textarea.formField {
+  padding:10px 0 0 10px;
+  resize: vertical;
+}
+.formButton {
+  width: 100%;
+  height: 50px;
+  margin-top: 14px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--mainBlue-color);
+  color: var(--textWhite-color);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px rgba(36, 18, 212, 0.25);
+}
+
+.formButton:hover {
+  transform: translateY(-2px);
+}
+
+.formButton:active {
+  transform: translateY(0);
 }
 
 /*mobil view*/
@@ -490,6 +569,11 @@ footer {
     gap: 30px;
     z-index: 100;
   }
+
+  .landingCategories {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
   .footerLogo {
     display: none;
   }

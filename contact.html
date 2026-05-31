@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mainPage">
+        <header>
+            <img src="img/Logo.svg" alt="logo" class="logo" />
+            <button class="hamburgerMenu">
+                <span class="hamburgerTop"></span>
+                <span class="hamburgerMiddle"></span>
+                <span class="hamburgerBottom"></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img src="img/logoHome.svg" alt="logo" class="logoNav" />Főoldal</a></li>
+                    <li><a href="products.html"><img src="img/logoProducts.svg" alt="logo"
+                                class="logoNav" />Termékek</a></li>
+                    <li><a href="contact.html"><img src="img/logoContact.svg" alt="logo" class="logoNav" />Kapcsolat</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main>
+            <div class="landingWelcomePic">
+                <div class="landingWelcomePicBg">
+                    <section>A 16. kerület Barkácsboltja</section>
+                    <section>1161 Budapest, Rákosi út 113.</section>
+                    <img src="img/Logo.svg" alt="logo" class="logo" height="100px" width="100px" />
+                </div>
+            </div>
+
+            <form class="formHead" action="https://formspree.io/f/xlgvkkoe" method="POST">
+                <label class="formLabel required" required id="name">
+                    Neve:</label>
+                <input class="formField" type="name"  name="name" placeholder="pl.:Nagy András" required>
+
+                <label class="formLabel required" id="email">
+                    Email címe:</label>
+                <input class="formField" type="email" name="email" placeholder="pl.: nagyandras@gmail.xom" required>
+
+                <label class="formLabel" id="phone">
+                    Telefonszáma: </label>
+                <textarea class="formField" name="phone" placeholder="pl.:+36 70 123 4567"></textarea>
+
+                <label class="formLabel required" id="subject">
+                    A levél tárgya:</label>
+                <textarea class="formField" name="subject" placeholder="Az üzenet tárgya" required></textarea>
+
+                <label class="formLabel required" id="message">
+                    Üzenete:</label>
+                <textarea class="formField" name="message" placeholder="Írja le részletesen, miben segíthetünk..." rows="10"required></textarea>
+
+                <button class="formButton "type="submit">Elküld</button>
+            </form>
+            <div class="landingLocation">
+                <section class="categoryText">
+                    <h2>Lokáció</h2>
+                    <h3>Cím: 1161 Budapest, Rákosi út 113</h3>
+                </section>
+                <div class="locationMap">
+                    <iframe
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBVizdQeh3udy11xDc5Ao2YStR2gLc-rfc&amp;q=budapest%20r%C3%A1kosi%20%C3%BAt%20113&amp;maptype=roadmap&amp;zoom=14"
+                        width="100%" height="200" style="border: 0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+            <div class="landingReviews"></div>
+        </main>
+        <aside class="side"></aside>
+        <sidebar class="side"></sidebar>
+
+        <footer>
+            <section class="footerBody">
+                <section class="footerMain">
+                    <section class="footerBrandName">Simon Trade Kft.</section>
+                    <p>Kulcsmásolás - Zárak - Kéziszerszámok - Barkácsárú - Kerti eszközök - Villanyzserelési anyagok
+                    </p>
+                    <section class="footerDetails">
+                        <section class="footerLogo"><img src="img/Logo.svg" alt="logo" class="logo" height="100px"
+                                width="100px" /></section>
+                        <section class="footerAvailable">
+                            <div>Elérhetőség</div>
+                            <p>Cím: 1161 Budapest Rákosi út 113.</p>
+                            <p>Tel :+0670123456</p>
+                            <p>Email: email@email.hu</p>
+
+                        </section>
+                        <section class="footerOpeningHours">
+                            <div>Nyitvatartás</div>
+                            <section>
+                                <table>
+                                    <tr>
+                                        <td>Hétfő - Péntek:</td>
+                                        <td>7:00 - 17:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Szombat:</td>
+                                        <td>8:00 - 12:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vasárnap:</td>
+                                        <td>Zárva</td>
+                                    </tr>
+                                </table>
+                            </section>
+                        </section>
+
+                    </section>
+                    <p>Megbízható termékek, szakértő tanácsadás és gyors kiszolgálás több mint 30 éve.</p>
+                </section>
+            </section>
+            <section class="footerCopyright">
+                © 1994 SimonTrade Kft. - Minden jog fenntartva.
+            </section>
+        </footer>
+    </div>
+
+    <script src="hamburgerMenu.js"></script>
+</body>
+
+</html>
