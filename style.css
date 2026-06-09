@@ -21,7 +21,7 @@ body {
 }
 .mainPage {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   min-height: 100vh;
   background-color: var(--mainBackground-color);
   display: flex;
@@ -195,6 +195,54 @@ font-size:0.9em;
   position:relative;
   top:10px; 
   left:-5px;
+}
+
+.CategoryCloser{
+  width: 100%;
+  height: 50px;
+  padding:5px 5px 5px 10px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--mainBlue-color);
+  color: var(--textWhite-color);
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px rgba(36, 18, 212, 0.25);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.CategoryCloser:hover {
+  transform: translateY(-2px);
+}
+
+
+ .arrow1,.arrow2{
+  position:relative;
+  flex-direction: row;
+  height: 2px;
+  width: 20px;
+  background-color: var(--textWhite-color);
+  transition:
+  transform 0.3s ease,
+  opacity 0.3s ease;
+  }
+  .arrow1{
+  transform: translateX(3px) rotate(45deg);
+  }
+  .arrow2{
+  transform: translateX(-3px) rotate(-45deg);
+  }
+  .CategoryCloser.active .arrow1{
+  transform: translateX(3px) rotate(135deg);
+}
+  .CategoryCloser.active .arrow2{
+ transform: translateX(-3px) rotate(-135deg);
+}
+#productCatalog .catalogCategory.active .catalogGroup {
+    display: block;
 }
 
 .landingOpeningHours {
@@ -401,6 +449,7 @@ footer {
 
 .catalog {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -427,10 +476,58 @@ footer {
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.05);
 }
 
+
+#productCatalog .catalogCategory {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 10px;
+}
+
+#productCatalog .catalogCategoryTitle {
+  margin: 0;
+}
+
+#productCatalog .CategoryCloser {
+  justify-self: end;
+  align-self: start;
+}
+
+#productCatalog .catalogGroup {
+  grid-column: 1 / -1;
+}
+#productCatalog .catalogGroup{
+  display:none;
+}
+#productCatalog .catalogCategory.active {
+
+  grid-column: 1 / -1;
+}
+#productCatalog .catalogGroup.active{
+  display:block;
+}
+
 .catalogGroupTitle {
   margin: 0 0 16px;
   font-size: 20px;
   color: var(--mainBlue-color);
+  
+}
+
+#productCatalog.searching {
+  grid-template-columns: 1fr;
+}
+
+#productCatalog.searching .catalogCategory {
+  grid-column: 1 / -1;
+}
+
+#productCatalog .catalogGroup {
+  display: none;
+}
+
+#productCatalog .catalogCategory.active .catalogGroup {
+  display: block;
 }
 
 .catalogList {
