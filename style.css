@@ -484,15 +484,14 @@ footer {
   gap: 10px;
 }
 
-#productCatalog .catalogCategoryTitle {
-  margin: 0;
+#productCatalog .catalogCategory.active {
+  grid-column: 1 / -1;
 }
 
-#productCatalog .CategoryCloser {
-  justify-self: end;
-  align-self: start;
+#productCatalog .catalogGroup {
+  grid-column: 1 / -1;
+  display: none;
 }
-
 
 .catalogGroupTitle {
   margin: 0 0 16px;
@@ -505,17 +504,6 @@ footer {
   grid-template-columns: 1fr;
 }
 
-#productCatalog.searching .catalogCategory {
-  grid-column: 1 / -1;
-}
-
-#productCatalog .catalogGroup {
-  display: none;
-}
-
-#productCatalog .catalogCategory.active .catalogGroup {
-  display: block;
-}
 
 .catalogList {
   list-style: none;
